@@ -1,4 +1,5 @@
 # HeroesApp
+Repository based on course from Udemy, Angular from cero knowledge to advance.
 
 ## Dev
 
