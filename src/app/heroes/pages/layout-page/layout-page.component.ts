@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from 'src/app/auth/interfaces/user.interface';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-layout-page',
@@ -13,5 +15,16 @@ export class LayoutPageComponent {
     { label: 'Añadir', icon: 'add', url: './new-hero' },
     { label: 'Buscar', icon: 'search', url: './search' },
   ]
+
+  constructor(private authService: AuthService) {}
+
+  get user(): User | undefined {
+    console.log(this.authService.currentUser)
+    return this.authService.currentUser;
+  }
+
+  onLogout() {
+    this.authService.logout();
+  }
 
 }
