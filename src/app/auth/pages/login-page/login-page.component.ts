@@ -14,7 +14,6 @@ export class LoginPageComponent {
   onLogin() {
     this.authService.login('mavs', 'Bank1234#')
     .subscribe(user => {
-      console.log(user);
       this.router.navigate(['/'])
     });
   }
